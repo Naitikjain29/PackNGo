@@ -21,16 +21,68 @@
         #nav1 {
             height: 90px;
         }
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        body { background-color: #f8f9fa; }
-        .search-btn { background-color: #007bff; color: white; }
+        
+   
+    
+        body {
+            font-family: Arial, sans-serif;
+           
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .booking-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .tab-content {
+            animation: slideUp 0.5s ease-in-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .search-btn {
+            transition: all 0.3s;
+        }
+        .search-btn:hover {
+            transform: scale(1.1);
+        }
+        .offers {
+            margin-top: 50px;
+        }
+        .offer-card {
+            transition: transform 0.3s;
+        }
+        .offer-card:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #f8f9fa;
+        }
     </style>
         
 
-    </style>
+   
 </head>
-<body>
+<body class="bg-info-subtle">
      <!-- Navbar -->
      <nav class="navbar navbar-expand-lg bg-info" id="nav1">
         <div class="container-fluid">
@@ -72,99 +124,100 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container mt-5">
-        <ul class="nav nav-tabs" id="bookingTab" role="tablist">
+    <div class="container booking-container">
+        <ul class="nav nav-tabs" id="bookingTabs" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights" type="button">Flights</button>
+                <button class="nav-link active" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights" type="button" role="tab">Flights</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels" type="button">Hotels</button>
+                <button class="nav-link" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels" type="button" role="tab">Hotels</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="trains-tab" data-bs-toggle="tab" data-bs-target="#trains" type="button">Trains</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="cabs-tab" data-bs-toggle="tab" data-bs-target="#cabs" type="button">Cabs</button>
+                <button class="nav-link" id="trains-tab" data-bs-toggle="tab" data-bs-target="#trains" type="button" role="tab">Trains</button>
             </li>
         </ul>
-        <div class="tab-content mt-3">
-            <!-- Flights Tab -->
-            <div class="tab-pane fade show active" id="flights">
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" placeholder="From">
+        <div class="tab-content" id="bookingTabsContent">
+            <div class="tab-pane fade show active" id="flights" role="tabpanel">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label>From</label>
+                        <input type="text" class="form-control" placeholder="Enter your location">
                     </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" placeholder="To">
+                    <div class="col-md-6">
+                        <label>To</label>
+                        <input type="text" class="form-control" placeholder="Enter destination">
                     </div>
+                </div>
+                <div class="row mt-3">
                     <div class="col-md-4">
+                        <label>Departure Date</label>
                         <input type="date" class="form-control">
                     </div>
-                    <div class="col-md-3">
-                        <select class="form-select">
-                            <option>1 Traveller</option>
-                            <option>2 Travellers</option>
-                            <option>3 Travellers</option>
+                    <div class="col-md-4">
+                        <label>Return Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Passengers</label>
+                        <select class="form-control">
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
+                            <option>3+ Passengers</option>
                         </select>
                     </div>
-                    <div class="col-md-3">
-                        <select class="form-select">
-                            <option>Economy</option>
-                            <option>Business</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn search-btn w-100">Search Flights</button>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary search-btn"><i class="fa fa-search"></i> Search Flights</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container offers">
+        <h2 class="text-center">Special Trip Offers</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card offer-card">
+                    <img src="goa.jpg" class="card-img-top" alt="Trip 1" height="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">Beach Paradise</h5>
+                        <p class="card-text">Enjoy the best beaches with our exclusive packages.</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>
-            <!-- Hotels Tab -->
-            <div class="tab-pane fade" id="hotels">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Enter City">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn search-btn w-100">Search Hotels</button>
+            <div class="col-md-4">
+                <div class="card offer-card">
+                    <img src="ladakh.jpeg" class="card-img-top" alt="Trip 2" height="280px">
+                    <div class="card-body">
+                        <h5 class="card-title">Mountain Adventure</h5>
+                        <p class="card-text">Experience breathtaking views and adventure activities.</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>
-            <!-- Trains Tab -->
-            <div class="tab-pane fade" id="trains">
-                <div class="row g-3">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" placeholder="From Station">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" placeholder="To Station">
-                    </div>
-                    <div class="col-md-4">
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn search-btn w-100">Search Trains</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Cabs Tab -->
-            <div class="tab-pane fade" id="cabs">
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Pickup Location">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Drop Location">
-                    </div>
-                    <div class="col-md-3">
-                        <button class="btn search-btn w-100">Search Cabs</button>
+            <div class="col-md-4">
+                <div class="card offer-card">
+                    <img src="jaipur.jpeg" class="card-img-top" alt="Trip 3" height="300px">
+                    <div class="card-body">
+                        <h5 class="card-title">City Escape</h5>
+                        <p class="card-text">Explore top cities with exclusive hotel deals.</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <p>Follow us on: 
+            <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white fs-4"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="text-white fs-4"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+        </p>
+        <p>&copy; 2025 PackNGo. All Rights Reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
 </body>
 </html>
