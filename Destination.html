@@ -1,70 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destination</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PackNGo</title>
     <link rel="icon" href="Logo2.png" />
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <style>
-        #img1 {
-            width: 110%;
-            height: 200px;
+      <style>
+        body{
+          background-color: lightgrey;
+        }
+        .bg-warn{
+          background-color: orange;
+          height: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 35px;
+          font-weight: 800;
+          color: darkblue;
+        }
+        .bg-warn:hover{
+          background-color: whitesmoke;
+          color: black;
+          transform: scale(1.02);
+        }
+    
+        
+        #img1{
+          width: 110%;
+            height: 120px;
             position: relative;
             bottom: 16px;
         }
-
-        #nav1 {
+        #nav1{
             height: 90px;
+            background-color: #C4E1F6;
         }
-    </style>
-</head>
-<body>
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg bg-info" id="nav1">
+        #card{
+          height: 400px;
+        }
+        #img2{
+          height:300px ;
+        }
+        .card {
+    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+      </style>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+      AOS.init();
+    </script>
+
+    <nav class="navbar navbar-expand-lg bg-info  " id="nav1">
         <div class="container-fluid">
-            <a class="navbar-brand" href="Home.html"><img src="logo2.png" alt="loading..." id="img1"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="About.html">About</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="Contactus.html">Contact Us</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href="Blog.html"><i class="fa-solid fa-bookmark"></i> Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
-                    </li>
+          <a class="navbar-brand" href="Home.html"><img src="logo2.png" alt="loading..." id="img1"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Booking.html"><i class="fa-solid fa-pen-to-square"></i> Booking</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Destination.html"><i class="fa-solid fa-plane"></i> Destinations</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="About.html">About</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="Contactus.html">Contact Us </a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="policy.html">Terms & Privacy Policy</a></li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
-                    <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin"></i> Search</button>
-                </form>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="Blog.html" ><i class="fa-solid fa-bookmark"></i> Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="login.html"><i class="fa-solid fa-user"></i> Login</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 " type="search" style="width: 300px;" placeholder="Explore your Journey..." aria-label="Search">
+              <button class="btn btn-outline-success bg-info-subtle" type="submit" style="width: 45%;"><i class="fa-brands fa-searchengin" ></i> Search</button>
+              
+            </form>
+        
+          </div>
         </div>
-    </nav>
+      </nav>
+      
+<!-- Include AOS Library (CDN) -->
+
+
+<!-- Explore More Section -->
+<section class="container mt-5">
+  <h2 class="text-center mb-4 bg-warn" >🌍 Explore More International Destinations</h2>
+  <div class="row">
+
+    <!-- Card 1 -->
+    <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000">
+      <div class="card shadow-lg border-0">
+        <img src="paris.jpg" class="card-img-top" alt="Paris" id="card">
+        <div class="card-body">
+          <h5 class="card-title">Paris, France</h5>
+          <p class="card-text">Paris, the City of Lights, is a timeless destination renowned for its romantic charm, iconic landmarks, and artistic heritage. Explore world-famous attractions like the Eiffel Tower, Louvre Museum, and Notre Dame Cathedral. Stroll along the Seine River, enjoy coffee at quaint cafés, and indulge in exquisite French cuisine. Discover vibrant neighborhoods like Montmartre and Le Marais, brimming with culture and history. With its elegance and enchantment, Paris captivates every traveler’s heart.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-12" data-aos="fade-up" data-aos-duration="1200">
+      <div class="card shadow-lg border-0">
+        <img src="bali.jpg" class="card-img-top" alt="Bali" id="card">
+        <div class="card-body">
+          <h5 class="card-title">Bali, Indonesia</h5>
+          <p class="card-text">Bali, the Island of the Gods, is a tropical paradise known for its pristine beaches, lush green rice terraces, and vibrant culture. Explore ancient temples like Uluwatu and Tanah Lot, or unwind on the sandy shores of Kuta and Seminyak. Adventure seekers can enjoy surfing, diving, and jungle treks. Savor Balinese cuisine and experience traditional dance performances. With its breathtaking sunsets, serene ambiance, and warm hospitality, Bali offers an unforgettable getaway for all travelers.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
     
-</body>
+    <!-- Card 3 -->
+    <div class="col-md-12" data-aos="fade-up" data-aos-duration="1400">
+      <div class="card shadow-lg border-0">
+        <img src="switzerland.jpg" class="card-img-top" alt="Switzerland" id="card">
+        <div class="card-body">
+          <h5 class="card-title">Switzerland</h5>
+          <p class="card-text">Switzerland, a paradise in the heart of Europe, is renowned for its snow-capped Alps, picturesque villages, and crystal-clear lakes. Explore the charming cities of Zurich, Geneva, and Lucerne, or enjoy thrilling winter sports in destinations like Zermatt and St. Moritz. Take scenic train rides, such as the Glacier Express, and marvel at breathtaking landscapes. Indulge in Swiss chocolates, cheese, and vibrant culture. With its natural beauty and serene ambiance, Switzerland is a dream destination for all travelers.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+<!-- Explore India Section -->
+<section class="container mt-5">
+  <h2 class="text-center mb-4 bg-warn">🇮🇳 Explore Incredible India</h2>
+  <div class="row">
+
+    <!-- Card 1 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+      <div class="card shadow-lg border-0">
+        <img src="tajmahal.jpeg" class="card-img-top" alt="Taj Mahal" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Taj Mahal, Agra</h5>
+          <p class="card-text">The Taj Mahal, an iconic symbol of love, is a UNESCO World Heritage Site located in Agra. Built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal, this marble masterpiece is admired for its exquisite architecture and intricate inlay work. Surrounded by lush gardens and reflecting pools, it offers a mesmerizing view, especially at sunrise and sunset. A global treasure, the Taj Mahal attracts millions of visitors, celebrating its timeless beauty and romantic legacy.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1100">
+      <div class="card shadow-lg border-0">
+        <img src="jaipur.jpeg" class="card-img-top" alt="Jaipur" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Jaipur, Rajasthan</h5>
+          <p class="card-text">Jaipur, the Pink City, is a vibrant blend of history, culture, and architecture. Renowned for its majestic palaces, forts, and bustling bazaars, it offers a royal experience. Visit the iconic Amber Fort, City Palace, and Hawa Mahal, marveling at their intricate designs. Explore colorful markets for traditional textiles, jewelry, and handicrafts. Jaipur’s rich heritage, warm hospitality, and mouthwatering Rajasthani cuisine make it a must-visit destination for history enthusiasts and culture seekers.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
+      <div class="card shadow-lg border-0">
+        <img src="varanasi.jpeg" class="card-img-top" alt="Varanasi" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Varanasi, Uttar Pradesh</h5>
+          <p class="card-text">Varanasi, the spiritual capital of India, is one of the world's oldest continuously inhabited cities. Nestled on the banks of the sacred Ganges River, it’s a hub of Hindu traditions and rituals. Witness the mesmerizing Ganga Aarti, explore ancient temples, and stroll along the bustling ghats. Known for its vibrant culture, silk weaving, and historic significance, Varanasi offers a profound spiritual experience. The city’s timeless charm captivates travelers from across the globe..</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="row mt-3"></div>
+
+    <!-- Card 4 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1300">
+      <div class="card shadow-lg border-0">
+        <img src="kerala.jpg" class="card-img-top" alt="Kerala" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Kerala Backwaters</h5>
+          <p class="card-text">The Kerala backwaters, a serene network of lagoons, lakes, and canals, are a hallmark of God’s Own Country. Cruise through these tranquil waters on a traditional houseboat while surrounded by lush greenery and swaying palms. Explore charming villages, spot exotic birds, and savor authentic Kerala cuisine. Destinations like Alleppey and Kumarakom offer unforgettable experiences of this unique ecosystem. The Kerala backwaters provide a perfect blend of natural beauty, culture, and relaxation for travelers.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Card 5 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1400">
+      <div class="card shadow-lg border-0">
+        <img src="goa.jpg" class="card-img-top" alt="Goa" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Goa Beaches</h5>
+          <p class="card-text">Goa, India’s beach capital, is renowned for its golden sands, vibrant nightlife, and water adventures. From the lively shores of Baga and Calangute to the serene vibes of Palolem and Vagator, Goa offers something for everyone. Indulge in water sports, enjoy fresh seafood, and explore beach shacks that buzz with music and energy. With its stunning sunsets, Portuguese heritage, and laid-back charm, Goa's beaches are the ultimate destination for relaxation and fun.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500">
+      <div class="card shadow-lg border-0">
+        <img src="ladakh.jpeg" class="card-img-top" alt="Ladakh" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Ladakh</h5>
+          <p class="card-text">Ladakh, the "Land of High Passes," is a breathtaking destination nestled in the Himalayas. Known for its rugged landscapes, azure lakes, and ancient monasteries, it offers a perfect blend of adventure and spirituality. Explore Pangong Lake, Nubra Valley, and the magnetic hill phenomenon. Experience the vibrant culture at Hemis and Thiksey monasteries. Ladakh's serene beauty, thrilling treks, and unique festivals make it a dream destination for nature lovers and adventure enthusiasts alike.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+    </div>
+
+    <!-- Card 7 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1600">
+      <div class="card shadow-lg border-0">
+        <img src="andaman.jpg" class="card-img-top" alt="Andaman" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Andaman Islands</h5>
+          <p class="card-text">The Andaman Islands, a tropical paradise in the Bay of Bengal, are known for their pristine beaches, turquoise waters, and vibrant coral reefs. Explore the rich marine life while snorkeling or scuba diving at Havelock and Neil Islands. Visit historical sites like Cellular Jail, trek through lush rainforests, and enjoy water sports. With serene surroundings, stunning sunsets, and an abundance of natural beauty, the Andaman Islands offer a perfect escape for nature lovers and adventurers alike.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1700">
+      <div class="card shadow-lg border-0">
+        <img src="rann.jpeg" class="card-img-top" alt="Rann of Kutch" id="img2">
+        <div class="card-body">
+          <h5 class="card-title">Rann of Kutch</h5>
+          <p class="card-text">The Rann of Kutch, a sprawling white desert in Gujarat, is a breathtaking natural wonder. Known for its salt marshes, it transforms into a dazzling white expanse under the moonlight. The vibrant Rann Utsav showcases local crafts, music, and dance, offering visitors a rich cultural experience. Marvel at stunning sunsets, visit traditional villages, and explore the Wild Ass Sanctuary. A unique blend of serenity and cultural vibrancy, Rann of Kutch is a must-visit destination.</p>
+          <a href="booking.html" class="btn btn-primary">Book now</a>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+  </body>
 </html>
